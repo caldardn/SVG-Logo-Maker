@@ -1,7 +1,7 @@
 const inquirer = require("inquirer");
 const fs = require("fs");
 const { createSVG } = require("./lib/createSVG");
-const validColor = ["red", "green", "blue", "yellow", "orange", "purple"]
+const validColor = require("./lib/colorsList")
 const questions = [
   {
     type: "input",
@@ -23,7 +23,7 @@ const questions = [
     name: "userTextColor",
     default: "Blue",
     validate: (input) => {
-        if(validColor.includes(input.toLowerCase())){
+        if(validColor){
             return true
         }else{
             return "Please enter a valid color"
@@ -43,7 +43,7 @@ const questions = [
     name: "userShapeColor",
     default: "Green",
     validate: (input) => {
-      if(validColor.includes(input.toLowerCase())){
+      if(validColor){
           return true
       }else{
           return "Please enter a valid color"
@@ -64,5 +64,3 @@ function init() {
 
 init();
 
-// fs.writeFile('logo.svg',svgContent(data),(err)=>
-//     err ? console.error(err) :console.log ('README created'))
