@@ -8,26 +8,26 @@ const questions = [
       message: "Please enter up to three characters to be displayed for you logo.",
       name: "userText",
       default: "DNC",
-      validate: (input) => {
-        if(input.length > 3 ){
-            return true
-        }else{
-            return "Please enter up to three characters."
-        }
-      }
+      // validate: (input) => {
+      //   if(input.length > 3 ){
+      //       return true
+      //   }else{
+      //       return "Please enter up to three characters."
+      //   }
+      // }
     },
     {
         type: "input",
         message: "Please enter what text color you would like.",
         name: "userTextColor",
         default: "Blue",
-        validate: (input) => {
-            if(colorChoice(input)){
-                return true
-            }else{
-                return "Please enter a valid color"
-            }
-          }
+        // validate: (input) => {
+        //     if(colorChoice(input)){
+        //         return true
+        //     }else{
+        //         return "Please enter a valid color"
+        //     }
+        //   }
     },
     {
         type: "list",
@@ -45,13 +45,13 @@ const questions = [
         message: "Please enter the color you would like for your shape.",
         name: "userShapeColor",
         default: "Green",
-        validate: (input) => {
-            if(colorChoice(input)){
-                return true
-            }else{
-                return "Please enter a valid color"
-            }
-          }
+        // validate: (input) => {
+        //     if(colorChoice(input)){
+        //         return true
+        //     }else{
+        //         return "Please enter a valid color"
+        //     }
+        //   }
       },
 ]
 
