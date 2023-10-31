@@ -1,7 +1,7 @@
 {
   "name": "svg-logo-maker",
   "version": "1.0.0",
-  "description": "",
+  "description": "DNC SVG logo Maker",
   "main": "index.js",
   "directories": {
     "example": "examples",
@@ -11,8 +11,8 @@
     "test": "jest"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "author": "David Caldarone",
+  "license": "MIT",
   "dependencies": {
     "inquirer": "^8.2.4"
   },

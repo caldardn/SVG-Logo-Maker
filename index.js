@@ -1,7 +1,8 @@
 const inquirer = require("inquirer");
 const fs = require("fs");
 const { createSVG } = require("./lib/createSVG");
-const validColor = require("./lib/colorsList")
+const validColor = require("./lib/colorsList");
+const colorRegex = /^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$/;
 const questions = [
   {
     type: "input",
@@ -23,12 +24,12 @@ const questions = [
     name: "userTextColor",
     default: "Blue",
     validate: (input) => {
-        if(validColor){
-            return true
-        }else{
-            return "Please enter a valid color"
-        }
+      if (validColor.colors.includes(input.toLowerCase()) || colorRegex.test(input)) {
+        return true;
+      } else {
+        return "Please enter a valid color";
       }
+    }
   },
   {
     type: "list",
@@ -43,10 +44,10 @@ const questions = [
     name: "userShapeColor",
     default: "Green",
     validate: (input) => {
-      if(validColor){
-          return true
-      }else{
-          return "Please enter a valid color"
+      if (validColor.colors.includes(input.toLowerCase()) || colorRegex.test(input) ) {
+        return true;
+      } else {
+        return "Please enter a valid color";
       }
     }
   },
